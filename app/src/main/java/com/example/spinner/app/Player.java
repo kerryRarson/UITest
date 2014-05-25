@@ -81,6 +81,7 @@ public class Player implements Parcelable {
         _team = values[2];
         _hgt = values[3];
         _wgt = values[4];
+        _Speed = values[5];
     }
     //Parceable stuff
     public Player(Parcel in) {

@@ -29,7 +29,7 @@ public class DisplayActivity extends ActionBarActivity {
             public void onClick(View v) {
                 TextView msg = (TextView)findViewById(R.id.selectedValue);
 
-                Intent btnPage = new Intent(DisplayActivity.this, ButtonActivity.class);
+                Intent btnPage = new Intent(DisplayActivity.this, ButtonActivity2.class);
                 btnPage.putExtra("param1", msg.getText().toString());
                 DisplayActivity.this.startActivity(btnPage);
             }

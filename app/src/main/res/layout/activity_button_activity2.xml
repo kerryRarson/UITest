@@ -26,6 +26,27 @@
             android:layout_margin="5dp"
             android:layout_below="@+id/label2"
             android:text="Do Something"/>
+        <EditText
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtName"
+            android:text="Player Name"
+            android:layout_below="@id/btn"/>
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/cboPos"
+            android:layout_below="@+id/txtName"
+            android:layout_margin="5dp"
+            android:entries="@array/positions"
+            />
+        <EditText
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtTeam"
+            android:text="Team"
+            android:layout_below="@+id/cboPos"
+            android:layout_margin="5dp"/>
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="fill_parent"
@@ -35,7 +56,7 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/btnBottom"
-                android:text="Bottom"/>
+                android:text="Save"/>
             </RelativeLayout>
 
 </RelativeLayout>
