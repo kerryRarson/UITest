@@ -27,7 +27,10 @@ public class ButtonActivity extends ActionBarActivity {
         Button btnHome = (Button)findViewById(R.id.btnHome);
         btnHome.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+                Player player = new Player( "test", "WR", "SEA","5.11", "163", "4.33");
+
                 Intent btnPage = new Intent(ButtonActivity.this, MainActivity.class);
+                btnPage.putExtra("player", player);
                 ButtonActivity.this.startActivity(btnPage);
             }
         });
