@@ -1,7 +1,13 @@
 package com.example.spinner.app;
 
+import android.content.Context;
+import android.graphics.AvoidXfermode;
 import android.os.Parcel;
 import android.os.Parcelable;
+
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
 
 /**
  * Created by klarsen on 5/25/2014.
@@ -70,6 +76,7 @@ public class Player implements Parcelable {
         _Speed = spd;
     }
     public  Player(){}
+
     //Serialize/Deserialize
     public String Serialize(){
         return _name.trim() + "~" + _Position + "~" + _team + "~" + _hgt + "~" + _wgt + "~" + _Speed;

@@ -7,57 +7,122 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context="com.example.spinner.app.ButtonActivity2">
-        <TextView
-            android:text="@string/hello_world"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="5dp"
-            android:id="@+id/label1"/>
-        <TextView android:text="Stuff"
+
+        <TextView android:text="@string/player_label"
             android:id="@+id/label2"
             android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:layout_margin="5dp"
-            android:layout_below="@+id/label1"/>
-        <Button
-            android:id="@+id/btn"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:layout_below="@+id/label2"
-            android:text="Do Something"/>
+            android:layout_width="wrap_content"/>
+
         <EditText
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/txtName"
-            android:text="Player Name"
-            android:layout_below="@id/btn"/>
-        <Spinner
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/cboPos"
-            android:layout_below="@+id/txtName"
+            android:inputType="textPersonName"
+            android:text="Name"
             android:layout_margin="5dp"
-            android:entries="@array/positions"
-            />
+            android:ems="10"
+            android:id="@+id/txtName"
+            android:layout_below="@id/label2"/>
+        <RelativeLayout
+            android:id="@+id/posLayout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtName">
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:id="@+id/posLabel"
+                    android:text="@string/label_pos"
+                    android:layout_gravity="center_vertical" />
+                <Spinner
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/cboPos"
+                    android:layout_margin="5dp"
+                    android:entries="@array/positions"
+                    android:layout_gravity="center_vertical" />
+                </LinearLayout>
+
+            </RelativeLayout>
+
         <EditText
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:id="@+id/txtTeam"
             android:text="Team"
-            android:layout_below="@+id/cboPos"
-            android:layout_margin="5dp"/>
+            android:layout_below="@+id/posLayout"
+            android:layout_margin="5dp"
+            android:inputType="textPersonName"/>
+        <RelativeLayout
+            android:id="@+id/hgtLayout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtTeam">
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:id="@+id/hgtLabel"
+                    android:text="@string/label_hgt"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_gravity="center_vertical" />
+                <Spinner
+                    android:layout_height="wrap_content"
+                    android:id="@+id/cboFeet"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:entries="@array/feet"/>
+                <Spinner
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/cboInches"
+                    android:entries="@array/inches"/>
+            </LinearLayout>
+        </RelativeLayout>
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="fill_parent"
-            android:layout_below="@id/btn">
-            <Button
+            android:layout_below="@id/txtTeam">
+            <!--<Button
                 android:layout_alignParentBottom="true"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/btnBottom"
                 android:text="Save"/>
-            </RelativeLayout>
+                -->
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_alignParentBottom="true"  >
+                <Button
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:text="Cancel"
+                    android:id="@+id/btnCancel"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_gravity="bottom" />
+
+                <Button
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:text="Save"
+                    android:id="@+id/btnSave"
+                    android:layout_alignBottom="@+id/btnCancel"
+                    android:layout_alignRight="@+id/pos"
+                    android:layout_alignEnd="@+id/pos"
+                    android:layout_gravity="bottom"/>
+            </LinearLayout>
+        </RelativeLayout>
 
 </RelativeLayout>
 
