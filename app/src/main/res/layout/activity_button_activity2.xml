@@ -29,8 +29,11 @@
         <EditText
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:text="Name"
+            android:layout_margin="5dp"
+            android:ems="10"
             android:id="@+id/txtName"
-            android:text="Player Name"
             android:layout_below="@id/btn"/>
         <Spinner
             android:layout_width="wrap_content"
@@ -46,7 +49,8 @@
             android:id="@+id/txtTeam"
             android:text="Team"
             android:layout_below="@+id/cboPos"
-            android:layout_margin="5dp"/>
+            android:layout_margin="5dp"
+            android:inputType="textPersonName"/>
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="fill_parent"
@@ -57,7 +61,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/btnBottom"
                 android:text="Save"/>
-            </RelativeLayout>
+        </RelativeLayout>
 
 </RelativeLayout>
 

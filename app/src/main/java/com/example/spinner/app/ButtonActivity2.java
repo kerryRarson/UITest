@@ -1,5 +1,6 @@
 package com.example.spinner.app;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -9,6 +10,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
 
 
 public class ButtonActivity2 extends ActionBarActivity {
@@ -57,6 +62,19 @@ public class ButtonActivity2 extends ActionBarActivity {
         String hgt = " " ,wgt = " ",spd = " ";
 
         Player p = new Player(name, team, pos, hgt, wgt, spd);
+
+        try {
+            String fileName = getResources().getString(R.string.PlayerFile);
+            //does the player already exist?
+            FileOutputStream hFile = openFileOutput(fileName, Context.MODE_PRIVATE);
+            OutputStreamWriter osw = new OutputStreamWriter(hFile);
+            osw.write(p.Serialize());
+            osw.flush();
+            osw.close();
+        } catch (IOException writeErr) {
+            writeErr.printStackTrace();
+        }
+
         return p;
     }
 }
